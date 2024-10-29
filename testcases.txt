@@ -1,0 +1,32 @@
+Követelmény:	Először a fő tároló lő
+Előfeltétel:	A fő tároló nem üres, a másodlagos nem üres, 100% hibaaránnyal
+Lépések:        tüzelünk egy torpedót (TORPEDO,SINGLE)
+Elvárt kimenet:	SUCCESS
+
+
+Követelmény:	A tárolók felváltva vannak használva
+Előfeltétel:	A fő tároló nem üres 100% hibaaránnyal, a másodlagos tároló nem üres
+Lépések:	    tüzelünk 2 torpedót (TORPEDO,SINGLE), ezt kétszer
+Elvárt kimenet:	FAIL, SUCCESS
+
+Követelmény:	Ha az egyik tároló üres, a másikkal tüzelünk
+Előfeltétel:	Az elsődleges tároló üres, a másodlagos nem üres
+Lépések:	    Kiadjuk a lövés parancsot (TORPEDO,SINGLE)
+Elvárt kimenet:	SUCCESS
+
+
+Követelmény:	Ha a torpedó hibás, nem próbálunk meg lőni a másik tárolóból
+Előfeltétel:	Az aktuális tárolóban lévő torpedó hibás, a másik tároló nem üres és nem hibás a következő torpedó
+Lépések:	    Kiadjuk a tűzparancsot (TORPEDO,SINGLE)
+Elvárt kimenet:	FAIL
+
+
+Követelmény: Ha bármelyik tár nem üres, lövünk
+Előfeltétel:	Valamelyik tár nem üres
+Lépések:	(1,1) (0,1) (1,0)  konfigban FIRE ALL
+Elvárt kimenet:	 SUCCESS
+
+Követelmény: Ha mindkét tár üres, nem lövünk
+Előfeltétel:	Valamelyik tár nem üres
+Lépések:	(0,0)  konfigban FIRE ALL
+Elvárt kimenet:	 FAIL
